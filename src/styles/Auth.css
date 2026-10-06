@@ -1,0 +1,266 @@
+/* =========================
+   PÁGINAS DE LOGIN
+========================= */
+
+.auth-page {
+  min-height: 100vh;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  padding: 20px;
+
+  background: #0b1018;
+}
+
+/* =========================
+   TARJETA PRINCIPAL
+========================= */
+
+.auth-card {
+  width: 100%;
+  max-width: 400px;
+
+  padding: 30px;
+
+  background: #121923;
+
+  border: 1px solid #273241;
+
+  box-shadow: 0 8px 20px #00000040;
+}
+
+/* =========================
+   LOGO
+========================= */
+
+.auth-logo {
+  text-align: center;
+
+  margin-bottom: 28px;
+
+  color: #b59a00;
+}
+
+.auth-logo svg {
+  opacity: 0.7;
+}
+
+.auth-logo h1 {
+  margin: 8px 0 0;
+
+  font-size: 27px;
+  font-weight: 700;
+  letter-spacing: 2px;
+}
+
+.auth-logo p {
+  margin: 4px 0 0;
+
+  color: #596575;
+
+  font-size: 9px;
+  letter-spacing: 2px;
+}
+
+/* =========================
+   TÍTULOS
+========================= */
+
+.auth-card h2 {
+  margin: 0 0 6px;
+
+  color: #d3dae4;
+
+  font-size: 22px;
+  font-weight: 600;
+
+  text-align: center;
+}
+
+.auth-description {
+  margin: 0 0 22px;
+
+  color: #697586;
+
+  font-size: 11px;
+
+  text-align: center;
+}
+
+/* =========================
+   FORMULARIO
+========================= */
+
+.auth-card form {
+  display: flex;
+  flex-direction: column;
+
+  gap: 8px;
+}
+
+.auth-card label {
+  margin-top: 7px;
+
+  color: #8b96a6;
+
+  font-size: 11px;
+  font-weight: 600;
+}
+
+/* =========================
+   CAMPOS
+========================= */
+
+.input-group {
+  height: 44px;
+
+  display: flex;
+  align-items: center;
+
+  gap: 9px;
+
+  padding: 0 11px;
+
+  background: #0b1018;
+
+  border: 1px solid #273241;
+
+  color: #596575;
+}
+
+.input-group:focus-within {
+  border-color: #26708f;
+}
+
+.input-group input {
+  width: 100%;
+  height: 100%;
+
+  border: none;
+  outline: none;
+
+  background: transparent;
+
+  color: #cbd5e1;
+
+  font-size: 12px;
+}
+
+.input-group input::placeholder {
+  color: #505b6b;
+}
+
+/* =========================
+   MENSAJE DE ERROR
+========================= */
+
+.auth-error {
+  margin: 5px 0;
+
+  padding: 8px;
+
+  background: #351b1b;
+
+  border: 1px solid #5c3030;
+
+  color: #c27676;
+
+  font-size: 10px;
+}
+
+/* =========================
+   BOTÓN PRINCIPAL
+========================= */
+
+.btn-primary {
+  width: 100%;
+  min-height: 44px;
+
+  margin-top: 12px;
+
+  border: 1px solid #8d7800;
+
+  background: #b59a00;
+
+  color: #0b1018;
+
+  font-size: 11px;
+  font-weight: 700;
+
+  letter-spacing: 1px;
+
+  transition: 0.15s;
+}
+
+.btn-primary:hover {
+  background: #a58b00;
+}
+
+.btn-primary:active {
+  background: #927b00;
+}
+
+/* =========================
+   PARTE INFERIOR
+========================= */
+
+.auth-footer {
+  margin-top: 22px;
+
+  padding-top: 18px;
+
+  border-top: 1px solid #273241;
+
+  text-align: center;
+}
+
+.auth-footer p {
+  margin: 0 0 7px;
+
+  color: #5f6b7b;
+
+  font-size: 10px;
+}
+
+.btn-link {
+  padding: 0;
+
+  border: none;
+
+  background: transparent;
+
+  color: #26708f;
+
+  font-size: 11px;
+  font-weight: 600;
+}
+
+.btn-link:hover {
+  color: #3184a5;
+
+  text-decoration: underline;
+}
+
+/* =========================
+   RESPONSIVE
+========================= */
+
+@media (max-width: 480px) {
+  .auth-page {
+    padding: 15px;
+  }
+
+  .auth-card {
+    padding: 24px 20px;
+  }
+
+  .auth-logo h1 {
+    font-size: 24px;
+  }
+
+  .auth-card h2 {
+    font-size: 20px;
+  }
+}

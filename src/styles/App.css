@@ -1,0 +1,359 @@
+/* Reset general */
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen, Ubuntu, Cantarell, sans-serif;
+}
+
+/* Fondo general de la página para centrado vertical y horizontal */
+.page-wrapper {
+  background-color: #f3f4f6; /* Fondo gris claro */
+  min-height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 30px 15px;
+}
+
+/* Recuadro principal: centrado, más pequeño y gris claro */
+.container {
+  width: 100%;
+  max-width: 650px; /* Tamaño compacto */
+  background-color: #f9fafb; /* Fondo gris muy claro centrado */
+  border: 1px solid #e5e7eb;
+  border-radius: 16px;
+  padding: 24px;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.05);
+}
+
+.title {
+  text-align: center;
+  color: #111827;
+  margin-bottom: 20px;
+  font-size: 22px;
+  font-weight: 700;
+}
+
+/* Secciones interiores de tarjetas */
+.section {
+  background-color: #ffffff; /* Blanco interior para destacar sobre el contenedor */
+  border: 1px solid #e5e7eb;
+  border-radius: 12px;
+  padding: 16px;
+  margin-bottom: 16px;
+}
+
+.section-title {
+  text-align: center;
+  color: #2563eb;
+  font-size: 16px;
+  margin-bottom: 15px;
+  font-weight: 600;
+}
+
+/* Grilla de dos columnas */
+.main-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 16px;
+}
+
+@media (max-width: 640px) {
+  .main-grid {
+    grid-template-columns: 1fr;
+  }
+}
+
+/* Carrusel y animación de tarjetas de películas */
+.carousel-container {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 10px;
+}
+
+.carousel-btn {
+  background-color: #9ca3af;
+  color: white;
+  border: none;
+  width: 32px;
+  height: 32px;
+  border-radius: 50%;
+  cursor: pointer;
+  font-size: 14px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: background-color 0.2s;
+  flex-shrink: 0;
+}
+
+.carousel-btn:hover:not(:disabled) {
+  background-color: #4b5563;
+}
+
+.carousel-btn:disabled {
+  opacity: 0.3;
+  cursor: not-allowed;
+}
+
+.movies-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 10px;
+  flex: 1;
+}
+
+/* Efecto 3D Flip Card */
+.flip-card {
+  background-color: transparent;
+  height: 160px;
+  perspective: 1000px;
+  cursor: pointer;
+}
+
+.flip-card-inner {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  text-align: center;
+  transition: transform 0.6s;
+  transform-style: preserve-3d;
+  border-radius: 8px;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
+}
+
+.flip-card:hover .flip-card-inner {
+  transform: rotateY(180deg);
+}
+
+.card-selected .flip-card-inner {
+  outline: 2px solid #2563eb;
+}
+
+.flip-card-front, .flip-card-back {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  -webkit-backface-visibility: hidden;
+  backface-visibility: hidden;
+  border-radius: 8px;
+  overflow: hidden;
+}
+
+.flip-card-front img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.card-badge {
+  position: absolute;
+  bottom: 0;
+  width: 100%;
+  background: rgba(0, 0, 0, 0.75);
+  color: white;
+  font-size: 10px;
+  padding: 4px 2px;
+  font-weight: 600;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  overflow: hidden;
+}
+
+.flip-card-back {
+  background-color: #1f2937;
+  color: white;
+  transform: rotateY(180deg);
+  padding: 8px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.flip-card-back h3 {
+  font-size: 11px;
+  margin-bottom: 4px;
+  color: #60a5fa;
+}
+
+.flip-card-back p {
+  font-size: 9px;
+  line-height: 1.2;
+  color: #e5e7eb;
+}
+
+.select-hint {
+  font-size: 8px;
+  margin-top: 6px;
+  color: #fbbf24;
+  font-style: italic;
+}
+
+.carousel-dots {
+  display: flex;
+  justify-content: center;
+  gap: 5px;
+  margin-top: 10px;
+}
+
+.dot {
+  width: 6px;
+  height: 6px;
+  background-color: #d1d5db;
+  border-radius: 50%;
+}
+
+.active-dot {
+  background-color: #2563eb;
+}
+
+/* Sección Carrito */
+.cart-section {
+  display: flex;
+  flex-direction: column;
+}
+
+.info-row {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 8px;
+  font-size: 12px;
+  color: #4b5563;
+}
+
+.divider {
+  border: none;
+  border-top: 1px dashed #d1d5db;
+  margin: 8px 0;
+}
+
+.total-row {
+  margin-top: 6px;
+  font-size: 15px;
+  font-weight: bold;
+  color: #111827;
+}
+
+.total-amount {
+  color: #2563eb;
+}
+
+.conditional-message {
+  margin-top: 10px;
+  text-align: center;
+  font-size: 11px;
+  font-weight: 600;
+}
+
+.msg-info { color: #dc2626; }
+.msg-regular { color: #d97706; }
+.msg-discount { color: #16a34a; }
+
+.message {
+  padding: 8px;
+  border-radius: 6px;
+  margin-top: 10px;
+  font-size: 11px;
+  text-align: center;
+}
+
+.message-success {
+  background-color: #dcfce7;
+  color: #15803d;
+}
+
+.message-error {
+  background-color: #fee2e2;
+  color: #b91c1c;
+}
+
+.summary {
+  margin-top: 10px;
+  padding: 10px;
+  background-color: #f3f4f6;
+  border: 1px solid #d1d5db;
+  border-radius: 6px;
+  font-size: 11px;
+}
+
+.summary h3 {
+  margin-bottom: 6px;
+  color: #111827;
+  font-size: 12px;
+}
+
+.summary p {
+  margin-bottom: 3px;
+}
+
+.summary-total {
+  margin-top: 4px;
+  color: #2563eb;
+}
+
+/* Formulario e Inputs con textos dentro del recuadro */
+.form-group {
+  margin-bottom: 10px;
+}
+
+.input {
+  width: 100%;
+  padding: 10px 12px;
+  border: 1px solid #d1d5db;
+  border-radius: 8px;
+  font-size: 13px;
+  outline: none;
+  background-color: #ffffff;
+  color: #111827;
+}
+
+.input:focus {
+  border-color: #2563eb;
+}
+
+/* Tono de gris para el texto por defecto dentro de los inputs */
+.input::placeholder {
+  color: #9ca3af;
+}
+
+.placeholder-color {
+  color: #9ca3af;
+}
+
+/* Botones */
+.button-group {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  gap: 6px;
+  margin-top: 15px;
+}
+
+.button {
+  padding: 8px 2px;
+  border: none;
+  border-radius: 6px;
+  color: white;
+  font-weight: 600;
+  font-size: 11px;
+  cursor: pointer;
+  transition: opacity 0.2s;
+}
+
+.button:hover {
+  opacity: 0.9;
+}
+
+.button-cancel {
+  background-color: #dc2626;
+}
+
+.button-summary {
+  background-color: #2563eb;
+}
+
+.button-confirm {
+  background-color: #16a34a;
+}
